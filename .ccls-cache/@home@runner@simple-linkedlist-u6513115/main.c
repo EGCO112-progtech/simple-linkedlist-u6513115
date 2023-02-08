@@ -11,14 +11,24 @@
 
 int main(int argc, const char *argv[]) {
   int c = 5;
-  struct node a, b, *head;
-  a.value = c;
-  a.next = &b;
-  head = &a;
-  b.value = head->value + 3;
+  struct node  b, *head;
+  typedef struct node Node;
+  typedef Node* NodePtr;
+
+  NodePtr p = (NodePtr)malloc(sizeof(Node));
+  head = p;
+  p->value=c;
+  p->next=(NodePtr)malloc(sizeof(Node));
+  p->next->value = head->value+3;
+
+  p->next->next=(NodePtr)malloc(sizeof(Node));
+  p->next->next->value = 11;
+  p->next->next->next = NULL;
+  
 
   printf("%d\n", head->value);       // what value for 5
   printf("%d\n", head->next->value); // what value for 8
+  printf("-----------------------\n");
   /*  Exercise I
       1. Add 1 more than at the end
       2. Add value(11)
@@ -32,7 +42,7 @@ int main(int argc, const char *argv[]) {
   printf("b.next->value = %d\n", b.next->value);
   printf("a.next->next->value = %d\n", a.next->next->value);
   printf("head->next->next->value = %d\n", head->next->next->value);
-
+  printf("-----------------------\n");
   /*  Exercise II
           1. Add 1 more than at the begining!!!!
           2. Add value (2)
@@ -45,7 +55,7 @@ int main(int argc, const char *argv[]) {
   printf("%d -> ", head->next->value);
   printf("%d -> ", head->next->next->value);
   printf("%d\n", head->next->next->next->value);
-
+  printf("-----------------------\n");
   //
   typedef struct node *NodePtr;
   NodePtr tmp = head; // add temp value to faciliate
@@ -60,6 +70,7 @@ int main(int argc, const char *argv[]) {
     // What is missing???
   }
   printf("NULL\n");
+  printf("-----------------------\n");
   /*  Exercise IV change to while loop!! (you can use NULL to help)
 
    */
@@ -71,6 +82,7 @@ int main(int argc, const char *argv[]) {
     // What is missing???
   }
   printf("NULL\n");
+  printf("-----------------------\n");
   /*  Exercise V Use malloc to create all nodes, instead of create a struct!!
           //use a loop to help
 
