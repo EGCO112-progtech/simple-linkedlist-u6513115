@@ -5,10 +5,11 @@
 //  Created by Mingmanas Sivaraksa on 4/2/2566 BE.
 //
 
+#include "node.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "node.h"
 
+//  Exercise V Use malloc to create all nodes, instead of create a struct!!
 int main(int argc, const char *argv[]) {
   int c = 5;
   struct node b, *head;
@@ -23,7 +24,7 @@ int main(int argc, const char *argv[]) {
   for (i = 0; i < n; i++) {
     p->next = (NodePtr)malloc(sizeof(Node));
     p = p->next;
-    p->value = c+i+1;
+    p->value = c + i + 1;
     p->next = NULL; //จะได้ชัวร์ว่ามี next
   }
 
@@ -48,8 +49,7 @@ int main(int argc, const char *argv[]) {
   printf("NULL\n");
   printf("-----------------------\n");
 
-  
-
+  free(p);
 
   return 0;
 }
