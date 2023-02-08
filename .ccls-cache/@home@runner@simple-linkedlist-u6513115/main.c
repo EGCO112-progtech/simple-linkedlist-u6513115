@@ -55,7 +55,7 @@ int main(int argc, const char *argv[]) {
   struct node *Nt;
   tmp = head;
   while (tmp != NULL) {
-    printf("+\n"); //เช็คว่าทำงานได้จริง
+    printf("+\n"); //เช็คว่าทำ
     Nt = tmp->next;
     free(tmp);
     tmp = Nt;
