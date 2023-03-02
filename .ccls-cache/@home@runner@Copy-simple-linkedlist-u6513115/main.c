@@ -17,9 +17,7 @@ int main(int argc, const char *argv[]) {
   head = &a;
   b.value = head->value + 3;
 
-  printf("head->value = %d\n", head->value);       // what value for 5
-  printf("head->next->value = %d\n", head->next->value); // what value for 8
-  printf("b.value = %d\n", b.value);
+
   /*  Exercise I
       1. Add 1 more than at the end
       2. Add value(11)
@@ -30,46 +28,22 @@ int main(int argc, const char *argv[]) {
     b.next=&d;
     d.value = 11;
     d.next = NULL;
-    printf("d.value = %d\n",d.value);
-    printf("b.next->value = %d\n",b.next->value);
-    printf("a.next->next->value = %d\n",a.next->next->value);
-    printf("head->next->next->value = %d\n",head->next->next->value);
 
   /*  Exercise II
           1. Add 1 more than at the begining!!!!
           2. Add value (2)
 
   */
-  printf("Exercise II\n");
+  
     struct node z;
   z.value = 2;
   z.next = &a;
   head = &z;
-  printf("%d -> ", head->value);
-  printf("%d -> ", head->next->value);
-  printf("%d -> ", head->next->next->value);
-  printf("%d\n", head->next->next->next->value);
-  printf("-----------------------\n");
 
   
   typedef struct node *NodePtr;
   NodePtr tmp = head; // add temp value to faciliate
 
-  /*  Exercise III Use loop to print everything
-      int i,n=5;
-      for(i=0;i<n;i++){
-          printf("%3d", tmp->value);
-        // What is missing???
-      }
-  */
-    int i, n = 4;
-  for (i = 0; i < n; i++) {
-    printf("%3d->", tmp->value);
-    tmp = tmp->next;
-    // What is missing???
-  }
-  printf("NULL\n");
-  printf("-----------------------\n");
 
   /*  Exercise IV change to while loop!! (you can use NULL to help)
 
@@ -78,6 +52,16 @@ int main(int argc, const char *argv[]) {
           // What is missing???
        }
    */
+  printf("Exercise IV\n");
+    tmp = head;
+  while (tmp != NULL) {
+    printf("%3d->", tmp->value);
+    tmp = tmp->next;
+
+    // What is missing???
+  }
+  printf("NULL\n");
+  printf("-----------------------\n");
 
   /*  Exercise V Use malloc to create all nodes, instead of create a struct!!
           //use a loop to help
