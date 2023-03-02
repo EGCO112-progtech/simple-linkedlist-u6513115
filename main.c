@@ -5,10 +5,10 @@
 //  Created by Mingmanas Sivaraksa on 4/2/2566 BE.
 //
 
-/*  Exercise V Use malloc to create all nodes, instead of create a struct!!
-        //use a loop to help
+/*  Exercise VI Free all node !!
+     //use a loop to help
 
-    */
+ */
 
 #include "node.h"
 #include <stdio.h>
@@ -39,6 +39,21 @@ int main(int argc, const char *argv[]) {
     printf("%3d->", tmp->value);
     tmp = tmp->next;
 
+    // What is missing???
+  }
+
+  printf("NULL\n");
+  printf("-----------------------\n");
+
+  struct node *Nt;
+  tmp = head;
+  while (tmp != NULL) {
+    printf("+\n"); //เช็คว่าทำงานได้จริง
+    Nt = tmp->next;
+    free(tmp);
+    tmp = Nt;
+
+    //ห้ามใช้ tmp = tmp->next; หลังจากฟรี
     // What is missing???
   }
 
