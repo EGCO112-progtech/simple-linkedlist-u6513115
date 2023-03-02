@@ -62,6 +62,14 @@ int main(int argc, const char *argv[]) {
         // What is missing???
       }
   */
+    int i, n = 4;
+  for (i = 0; i < n; i++) {
+    printf("%3d->", tmp->value);
+    tmp = tmp->next;
+    // What is missing???
+  }
+  printf("NULL\n");
+  printf("-----------------------\n");
 
   /*  Exercise IV change to while loop!! (you can use NULL to help)
 
